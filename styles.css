@@ -1,10 +1,12 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'Poppins',sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
+
 .container {
+    max-width: 90%;
     width: 600px;
     height: 690px;
     background-color: aqua;
@@ -12,17 +14,18 @@
     align-items: center;
     justify-content: center;
     position: absolute;
-    top: 90px;
-    left: 470px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 20px;
-    
 }
+
 .calculator {
-   background: black;
-   padding: 10px;
-   border-radius: 10px;
-   
+    background: black;
+    padding: 15px;
+    border-radius: 10px;
 }
+
 .calculator form input {
     border: 0;
     outline: 0;
@@ -34,24 +37,68 @@
     color: white;
     cursor: pointer;
     border: 1px solid silver;
-    margin: 3px 3px;
-    padding: 25px;
+    margin: 5px;
+    text-align: center;
 }
+
 form .display {
     display: flex;
     justify-content: flex-end;
     margin: 20px 0;
 }
+
 form .display input {
     text-align: right;
     flex: 1;
     font-size: 40px;
     box-shadow: none;
+    border: none;
+    background: transparent;
+    color: white;
 }
+
 form input.equal {
     width: 128px;
     color: aqua;
 }
-form input.opreator {
+
+form input.operator {
     color: aqua;
+}
+
+/* ✅ Responsive Design using Media Queries */
+@media screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+        height: auto;
+        padding: 20px;
+    }
+
+    .calculator form input {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    form .display input {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        width: 95%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .calculator form input {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    form .display input {
+        font-size: 25px;
+    }
 }
